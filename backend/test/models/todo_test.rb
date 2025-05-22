@@ -1,11 +1,11 @@
 require "test_helper"
 
 class TodoTest < ActiveSupport::TestCase
-  setup do 
+  setup do
     @todo = todos(:one)
   end
 
-  test "should not save todo without a name" do 
+  test "should not save todo without a name" do
     todo = Todo.create
     assert_not todo.save, "Cannot save the to do task without a title"
   end
@@ -17,7 +17,7 @@ class TodoTest < ActiveSupport::TestCase
 
   test "should not be valid without a name" do
     @todo.todo_name = ""
-    assert_not @todo.valid?  
+    assert_not @todo.valid?
   end
   
   test "should be valid with a name" do
