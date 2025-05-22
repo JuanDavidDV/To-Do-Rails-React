@@ -3,7 +3,7 @@ class Api::TodosController < ApplicationController  # Api:: is added because of 
 
   # GET /api/todos
   def index
-    @todos = Todo.all
+    @todos = Todo.order(created_at: :desc)
 
     render json: @todos
   end
