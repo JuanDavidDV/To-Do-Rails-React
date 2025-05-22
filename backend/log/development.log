@@ -32,3 +32,130 @@ Completed 200 OK in 16ms (Views: 1.2ms | ActiveRecord: 1.2ms (1 query, 0 cached)
   [1m[36mTodo Create (0.8ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test1', 0, '2025-05-22 02:09:53.413133', '2025-05-22 02:09:53.413133') RETURNING "id" /*application='Backend'*/[0m
   [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
   [1m[36mTodo Load (1.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-21 22:11:34 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 18ms (Views: 4.3ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-21 22:11:53 -0400
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/todos" for 127.0.0.1 at 2025-05-21 22:11:59 -0400
+Processing by Api::TodosController#create as */*
+  Parameters: {"todo_name"=>"test2", "completed"=>false, "todo"=>{"todo_name"=>"test2", "completed"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (1.3ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('test2', 0, '2025-05-22 02:11:59.743946', '2025-05-22 02:11:59.743946') RETURNING "id" /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+Completed 201 Created in 9ms (Views: 0.3ms | ActiveRecord: 5.0ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTodo Load (1.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+Started PATCH "/api/todos/2/update_completed" for 127.0.0.1 at 2025-05-21 22:12:17 -0400
+Processing by Api::TodosController#update_completed as */*
+  Parameters: {"completed"=>true, "id"=>"2", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 2 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.4ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 02:12:17.184923' WHERE "todos"."id" = 2 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 18ms (Views: 0.5ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+Started DELETE "/api/todos/2" for 127.0.0.1 at 2025-05-21 22:12:27 -0400
+Processing by Api::TodosController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 2 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.6ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 2 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('test test', 0, '2025-05-22 02:12:54.226782', '2025-05-22 02:12:54.226782') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-21 22:13:01 -0400
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.4ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-21 22:13:02 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 3 LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Update (0.2ms)[0m  [1m[33mUPDATE "todos" SET "todo_name" = 'new', "completed" = 1, "updated_at" = '2025-05-22 02:13:34.574009' WHERE "todos"."id" = 3 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 3 LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Destroy (0.2ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 3 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Create (0.5ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('New', 0, '2025-05-22 02:14:20.889882', '2025-05-22 02:14:20.889882') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Hello World', 1, '2025-05-22 02:14:43.788580', '2025-05-22 02:14:43.788580') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."completed" = 0 /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."completed" = 0 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Update (0.3ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 02:15:21.624420' WHERE "todos"."id" = 1 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Update (0.2ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 02:15:21.625796' WHERE "todos"."id" = 4 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Destroy (0.3ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 1 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Destroy (0.2ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 4 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Destroy (0.2ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 5 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "todos" /*application='Backend'*/[0m
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-21 22:16:27 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-21 22:16:35 -0400
+Processing by Api::TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 1ms (Views: 1.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
