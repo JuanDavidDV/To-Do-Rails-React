@@ -1,10 +1,11 @@
-.add-todo {
+.add-todo-container {
   margin-top: 1rem;
   display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   width: 100%;
+  height: 2.25rem;
 }
 
 .add-todo-input {
@@ -13,6 +14,7 @@
   border-radius: 0.25rem;
   border: 0.15rem solid black;
   padding: 0 0.5em;
+  font-size: 1rem;
 }
 
 .add-todo-button {
@@ -29,3 +31,13 @@
 .add-todo-button:hover {
   background-color: rgb(60, 223, 27);
 }
+
+.add-todo-error {
+  color: rgb(190, 0, 0);
+  font-weight: bolder;
+  font-size: 1rem;
+  background-color: rgb(224, 136, 158);
+  height: 1.5rem;
+  border-radius: 0.25rem;
+}
+
