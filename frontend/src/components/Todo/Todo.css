@@ -15,7 +15,8 @@
 }
 
 .todo-title {
-  color: rgb(255, 251, 0);
+  color: rgb(230, 208, 6);
+  font-size: 1.50rem;
 }
 
 .todo-checkbox {
@@ -31,4 +32,11 @@
   transform: scale(1.1);
 }
 
+.delete-icon {
+  color: red;
+  cursor: pointer;
+}
 
+.delete-icon:hover {
+  transform: scale(1.1);
+}
