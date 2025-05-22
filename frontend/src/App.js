@@ -1,7 +1,8 @@
 import "./App.css";
 import TodoList from "./components/TodoList/TodoList";
-import { useState, useEffect } from "react";
+import AddTodo from "./components/AddTodo/AddTodo";
 import ToDoApi from "./utilsJs/API/endpoints";
+import { useState, useEffect } from "react";
 
 function App() {
 

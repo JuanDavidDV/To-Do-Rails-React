@@ -392,3 +392,17 @@ Processing by Api::TodosController#index as HTML
 Completed 200 OK in 1ms (Views: 1.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 10:26:59 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (1.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 10:26:59 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
