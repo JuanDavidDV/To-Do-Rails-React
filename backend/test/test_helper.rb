@@ -13,3 +13,18 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+# Prevent ActionCable from interfering with regular integration/controller tests
+module ActionCable
+  module Server
+    class Base
+      def pubsub
+        # Return a fake pubsub adapter to avoid crashes in test
+        @pubsub ||= Class.new {
+          def subscribe(*); end
+          def unsubscribe(*); end
+        }.new
+      end
+    end
+  end
+end

@@ -44,6 +44,16 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+  gem "rubocop" # Linting
+
+  gem "bundler-audit"
+  gem "ruby_audit"  # Security tools
+
+  # Test
+  gem "capybara"
+  gem "selenium-webdriver"
+  gem "webmock"
+  gem "webdrivers"
 end
 
 gem "rack-cors" # API secured using CORS policy so that API can be access from specific domain
