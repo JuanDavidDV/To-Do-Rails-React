@@ -21,6 +21,7 @@ function App() {
     <div className="App">
       <div className="app-container">
         <h1 className="title">Todo List App</h1>
+        <AddTodo />
         <TodoList todos={todos} />
       </div>
     </div>

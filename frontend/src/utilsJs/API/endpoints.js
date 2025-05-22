@@ -14,5 +14,15 @@ export default class ToDoApi {
     catch(error) {
       console.error(error);
     }
-  }
+  };
+
+  async postTodo(newTodoName) {
+    try {
+      const { data } = await axios.post(this.baseUrl + "todos", {"todo_name": newTodoName, "completed": false});
+      return data;
+    }
+    catch(error) {
+      console.error(error);
+    }
+  };
 };
