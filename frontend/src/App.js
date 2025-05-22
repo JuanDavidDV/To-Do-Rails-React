@@ -20,6 +20,7 @@ function App() {
   const addTodo = async (todo_name) => {
     const newTodo = new ToDoApi();  // Creates instance for ToDosApi class
     const newTodoPost = await newTodo.postTodo(todo_name); // Post new comment to API
+    setTodos([newTodoPost, ...todos])
   };
 
   return (

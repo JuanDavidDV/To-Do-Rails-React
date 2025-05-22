@@ -586,3 +586,30 @@ Processing by Api::TodosController#index as HTML
 Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started POST "/api/todos" for 127.0.0.1 at 2025-05-22 11:31:19 -0400
+Processing by Api::TodosController#create as HTML
+  Parameters: {"todo_name"=>"Test 2", "completed"=>false, "todo"=>{"todo_name"=>"Test 2", "completed"=>false}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (2.0ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test 2', 0, '2025-05-22 15:31:19.101859', '2025-05-22 15:31:19.101859') RETURNING "id" /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+Completed 201 Created in 6ms (Views: 0.3ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTodo Count (2.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "todos" /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."id" DESC LIMIT 1 /*application='Backend'*/[0m
+Started POST "/api/todos" for 127.0.0.1 at 2025-05-22 11:32:10 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::TodosController#create as HTML
+  Parameters: {"todo_name"=>"Test 4", "completed"=>false, "todo"=>{"todo_name"=>"Test 4", "completed"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (1.3ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test 4', 0, '2025-05-22 15:32:10.632660', '2025-05-22 15:32:10.632660') RETURNING "id" /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+Completed 201 Created in 17ms (Views: 0.3ms | ActiveRecord: 5.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
