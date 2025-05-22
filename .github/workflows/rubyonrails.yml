@@ -25,12 +25,15 @@ jobs:
         with:
           ruby-version: 3.3.2
           bundler-cache: true
+          working-directory: backend
       # Add or replace database setup steps here
       - name: Set up database schema
         run: bundle exec rails db:schema:load
+        working-directory: backend
       # Add or replace test runners here
       - name: Run tests
         run: bin/rake
+        working-directory: backend
 
   lint:
     runs-on: ubuntu-latest
@@ -42,12 +45,17 @@ jobs:
         with:
           ruby-version: 3.3.2
           bundler-cache: true
+          working-directory: backend
       - name: Generate binstubs
         run: bundle binstubs bundler-audit brakeman rubocop
+        working-directory: backend
       # Add or replace any other lints here
       - name: Security audit dependencies
         run: bundle exec bundle audit --update
+        working-directory: backend
       - name: Security audit application code
         run: bundle exec brakeman -q -w2
+        working-directory: backend
       - name: Lint Ruby files
         run: bundle exec rubocop --parallel
+        working-directory: backend
