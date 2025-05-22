@@ -45,3 +45,5 @@ group :development, :test do
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
 end
+
+gem "rack-cors" # API secured using CORS policy so that API can be access from specific domain
