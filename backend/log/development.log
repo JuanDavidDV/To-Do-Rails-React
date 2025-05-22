@@ -785,3 +785,733 @@ Processing by Api::TodosController#create as HTML
 Completed 201 Created in 5ms (Views: 0.2ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started DELETE "/api/todos/8" for 127.0.0.1 at 2025-05-22 14:35:53 -0400
+Processing by Api::TodosController#destroy as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mTodo Load (2.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 8 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (1.6ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 8 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 17ms (ActiveRecord: 8.0ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."id" ASC LIMIT 1 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Update (1.3ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:39:41.769457' WHERE "todos"."id" = 11 /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:41:04 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 26ms (Views: 6.1ms | ActiveRecord: 2.0ms (1 query, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:41:04 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:41:05 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:41:06 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:41:07 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:41:09 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:41:09 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Create (0.9ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test2', 0, '2025-05-22 18:42:18.802017', '2025-05-22 18:42:18.802017') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (4.9ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:42:26 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 6.3ms | ActiveRecord: 2.2ms (1 query, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:42:26 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:42:27 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:42:30 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:42:36 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:43:04 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:43:05 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:43:05 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:43:06 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started DELETE "/api/todos/12" for 127.0.0.1 at 2025-05-22 14:44:28 -0400
+Processing by Api::TodosController#destroy as HTML
+  Parameters: {"id"=>"12"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 12 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.9ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 12 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (6.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 19ms (ActiveRecord: 7.5ms (2 queries, 0 cached) | GC: 1.4ms)
+
+
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:44:34 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started POST "/api/todos" for 127.0.0.1 at 2025-05-22 14:46:21 -0400
+Processing by Api::TodosController#create as HTML
+  Parameters: {"todo_name"=>"Test2", "completed"=>false, "todo"=>{"todo_name"=>"Test2", "completed"=>false}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (2.4ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test2', 0, '2025-05-22 18:46:21.424603', '2025-05-22 18:46:21.424603') RETURNING "id" /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+Completed 201 Created in 12ms (Views: 0.6ms | ActiveRecord: 2.8ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PUT "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:46:22 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/api/todos/[object%20Object]/update_completed"):
+  
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:47:01 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 7.3ms | ActiveRecord: 1.7ms (1 query, 0 cached) | GC: 1.5ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:47:01 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:47:03 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:47:13 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:47:41 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:47:44 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:47:48 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 1ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:47:51 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:47:51 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:48:41 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 4.8ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:48:41 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:48:43 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:49:01 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:49:01 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/[object%20Object]/update_completed" for 127.0.0.1 at 2025-05-22 14:49:03 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"[object Object]", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = NULL LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=[object Object]):
+  
+app/controllers/api/todos_controller.rb:44:in `set_todo'
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:49:49 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:49:49 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:49:51 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (2.5ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:49:51.428143' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (6.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 9.2ms (2 queries, 0 cached) | GC: 0.8ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:49:53 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:09 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:09 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:50:12 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"13", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.5ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:50:12.762325' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:17 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:17 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:50:28 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (6.9ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:50:28.463011' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 12ms (Views: 0.4ms | ActiveRecord: 7.2ms (2 queries, 0 cached) | GC: 5.3ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:32 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:32 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:50:34 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"13", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.9ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:50:34.953197' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:35 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:50:35 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:52:24 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:52:24 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:52:24 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:52:24 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:53:00 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 14.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 10.9ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:53:00 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:04 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (1.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 5.4ms | ActiveRecord: 1.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:04 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:05 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.6ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:05.625242' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:07 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"13", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.3ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:07.273656' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:08 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"11", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (12.2ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:08.133584' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 17ms (Views: 0.4ms | ActiveRecord: 12.6ms (2 queries, 0 cached) | GC: 10.6ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:09 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.1ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:09.080799' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:09 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"11", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (3.5ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:09.760314' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 12ms (Views: 0.5ms | ActiveRecord: 3.9ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:10 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"11", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.1ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:10.216620' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:10 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"13", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.1ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:10.826763' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 1.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:15 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"11", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.1ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:15.281564' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.7ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:15 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"11", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.5ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:15.742616' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 6ms (Views: 0.5ms | ActiveRecord: 1.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:16 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.1ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:16.474517' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 1.8ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:16 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"13", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.2ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:16.873746' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 6ms (Views: 0.8ms | ActiveRecord: 1.5ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:19 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.1ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:19.431284' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 1.4ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:20 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"11", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.4ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:20.765218' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 1.6ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:21 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"13", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.4ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:21.694035' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 14ms (Views: 7.4ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 7.0ms)
+
+
+Started PATCH "/api/todos/11/update_completed" for 127.0.0.1 at 2025-05-22 14:58:22 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>false, "id"=>"11", "todo"=>{"completed"=>false}}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 11 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.9ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 0, "updated_at" = '2025-05-22 18:58:22.366759' WHERE "todos"."id" = 11 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 2.2ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:33 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 4.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:33 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/api/todos/13/update_completed" for 127.0.0.1 at 2025-05-22 14:58:34 -0400
+Processing by Api::TodosController#update_completed as HTML
+  Parameters: {"completed"=>true, "id"=>"13", "todo"=>{"completed"=>true}}
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 13 LIMIT 1 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTodo Update (1.3ms)[0m  [1m[33mUPDATE "todos" SET "completed" = 1, "updated_at" = '2025-05-22 18:58:34.642801' WHERE "todos"."id" = 13 /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='update_completed',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:29:in `update_completed'
+Completed 200 OK in 8ms (Views: 0.4ms | ActiveRecord: 1.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:35 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:35 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/todos" for 127.0.0.1 at 2025-05-22 14:58:49 -0400
+Processing by Api::TodosController#create as HTML
+  Parameters: {"todo_name"=>"Test 3", "completed"=>false, "todo"=>{"todo_name"=>"Test 3", "completed"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (1.9ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test 3', 0, '2025-05-22 18:58:49.171352', '2025-05-22 18:58:49.171352') RETURNING "id" /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+Completed 201 Created in 11ms (Views: 0.7ms | ActiveRecord: 2.1ms (1 query, 0 cached) | GC: 1.2ms)
+
+

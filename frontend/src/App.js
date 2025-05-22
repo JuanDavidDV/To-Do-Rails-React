@@ -27,7 +27,7 @@ function App() {
     const selectedTodo = new ToDoApi(); // Creates instance for ToDosApi class
     const deleteTodoById = await selectedTodo.deleteTodo(todoId); // Delete Todo to API
     setTodos(todos.filter((todo) => todo.id !== todoId));
-  }
+  };
 
   return (
     <div className="App">
