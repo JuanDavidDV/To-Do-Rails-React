@@ -661,3 +661,127 @@ Processing by Api::TodosController#index as HTML
 Completed 200 OK in 5ms (Views: 3.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:03:03 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (1.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.0ms | ActiveRecord: 1.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:03:03 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.2ms | ActiveRecord: 0.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/api/todos/6" for 127.0.0.1 at 2025-05-22 14:03:05 -0400
+Processing by Api::TodosController#destroy as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 6 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (2.3ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 6 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (3.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 36ms (ActiveRecord: 5.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:03:07 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:03:07 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:05:04 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 2.8ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:05:04 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/api/todos/9" for 127.0.0.1 at 2025-05-22 14:05:06 -0400
+Processing by Api::TodosController#destroy as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 9 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.6ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 9 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.8ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/api/todos/10" for 127.0.0.1 at 2025-05-22 14:05:07 -0400
+Processing by Api::TodosController#destroy as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 10 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.6ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 10 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:05:08 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 1.9ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 14:05:08 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.6ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started DELETE "/api/todos/7" for 127.0.0.1 at 2025-05-22 14:05:09 -0400
+Processing by Api::TodosController#destroy as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = 7 LIMIT 1 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.5ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = 7 /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='destroy',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 2ms (ActiveRecord: 0.7ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/api/todos" for 127.0.0.1 at 2025-05-22 14:05:19 -0400
+Processing by Api::TodosController#create as HTML
+  Parameters: {"todo_name"=>"Test 1", "completed"=>false, "todo"=>{"todo_name"=>"Test 1", "completed"=>false}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (1.2ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test 1', 0, '2025-05-22 18:05:19.756186', '2025-05-22 18:05:19.756186') RETURNING "id" /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:20:in `create'
+Completed 201 Created in 5ms (Views: 0.2ms | ActiveRecord: 1.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
