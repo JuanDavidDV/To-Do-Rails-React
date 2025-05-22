@@ -46,7 +46,7 @@ class ApplicationSystemTestCase < ActionDispatch::SystemTestCase
 
   # Configure Capybara for WSL
   Capybara.configure do |config|
-    config.server_host = '0.0.0.0'
+    config.server_host = "0.0.0.0"
     config.server_port = 3000
     config.app_host = "http://localhost:3000" # Or use your WSL IP if needed
   end
