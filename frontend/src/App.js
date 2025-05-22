@@ -17,17 +17,22 @@ function App() {
     fetchTodos();
   }, []);
 
-  const addTodo = async (todo_name) => {
+  const addTodo = async (todoName) => {
     const newTodo = new ToDoApi();  // Creates instance for ToDosApi class
-    const newTodoPost = await newTodo.postTodo(todo_name); // Post new comment to API
+    const newTodoPost = await newTodo.postTodo(todoName); // Post new Todo to API
     setTodos([newTodoPost, ...todos])
   };
+
+  const deleteTodo = async(todoId) => {
+    const selectedTodo = new ToDoApi(); // Creates instance for ToDosApi class
+    const deleteTodoById = await selectedTodo.deleteTodo(todoId); // Delete Todo to API
+  }
 
   return (
     <div className="App">
       <div className="app-container">
         <h1 className="title">Todo List App</h1>
-        <AddTodo addTodo={addTodo} />
+        <AddTodo addTodo={addTodo} deleteTodo={deleteTodo} />
         <TodoList todos={todos} />
       </div>
     </div>
