@@ -25,4 +25,14 @@ export default class ToDoApi {
       console.error(error);
     }
   };
+
+  async deleteTodo(todoId) {
+    try {
+      const { data } = await axios.delete(this.baseUrl + "todos/" + todoId );
+      return data;
+    }
+    catch(error) {
+      console.error(error);
+    }
+  };
 };
