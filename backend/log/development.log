@@ -25,3 +25,10 @@ Processing by Api::TodosController#index as HTML
 Completed 200 OK in 16ms (Views: 1.2ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
 
 
+  [1m[36mTodo Load (2.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Create (0.8ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test1', 0, '2025-05-22 02:09:53.413133', '2025-05-22 02:09:53.413133') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (4.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Load (1.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
