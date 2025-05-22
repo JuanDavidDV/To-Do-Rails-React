@@ -1,13 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Todo from "./components/Todo/Todo";
+import TodoList from "./components/TodoList/TodoList";
 
 function App() {
   return (
     <div className="App">
       <div className="app-container">
         <h1 className="title">Todo List App</h1>
-        <Todo />
+        <TodoList />
       </div>
     </div>
   );
