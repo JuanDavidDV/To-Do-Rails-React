@@ -2,7 +2,7 @@ import axios from "axios";
 
 export default class ToDoApi {
   constructor(todoId) {
-    this.baseUrl = import.meta.env.BASE_URL;
+    this.baseUrl = process.env.REACT_APP_API_BASE_URL;
     this.todoId = todoId;
   }
 

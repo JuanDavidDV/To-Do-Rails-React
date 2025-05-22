@@ -175,3 +175,66 @@ Started GET "/ws" for ::1 at 2025-05-22 07:19:01 -0400
   
 ActionController::RoutingError (No route matches [GET] "/ws"):
   
+  [1m[36mTodo Count (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM "todos" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Create (0.6ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES ('Test', 1, '2025-05-22 13:40:31.054678', '2025-05-22 13:40:31.054678') RETURNING "id" /*application='Backend'*/[0m
+  [1m[36mTRANSACTION (4.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Backend'*/[0m
+  [1m[36mTodo Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "todos" /*application='Backend'*/[0m
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /* loading for pp */ LIMIT 11 /*application='Backend'*/[0m
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:41:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 16ms (Views: 4.9ms | ActiveRecord: 1.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:41:46 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:41:57 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (3.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 4.4ms | ActiveRecord: 2.7ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:41:57 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:42:38 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:42:38 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:42:49 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-22 09:42:49 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
