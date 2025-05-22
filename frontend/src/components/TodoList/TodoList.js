@@ -1,4 +1,5 @@
 import Todo from "../Todo/Todo";
+import "./TodoList.css"
 
 const TodoList = () => {
  return (
