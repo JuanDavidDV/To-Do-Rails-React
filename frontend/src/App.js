@@ -32,8 +32,8 @@ function App() {
     <div className="App">
       <div className="app-container">
         <h1 className="title">Todo List App</h1>
-        <AddTodo addTodo={addTodo} deleteTodo={deleteTodo} />
-        <TodoList todos={todos} />
+        <AddTodo addTodo={addTodo} />
+        <TodoList todos={todos} deleteTodo={deleteTodo} />
       </div>
     </div>
   );
