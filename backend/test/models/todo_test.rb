@@ -19,7 +19,7 @@ class TodoTest < ActiveSupport::TestCase
     @todo.todo_name = ""
     assert_not @todo.valid?
   end
-  
+
   test "should be valid with a name" do
     assert @todo.valid?
   end
