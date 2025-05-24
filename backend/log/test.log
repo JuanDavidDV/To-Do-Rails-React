@@ -911,3 +911,55 @@ TodoTest: test_should_save_todo_with_name
   [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("todo_name", "completed", "created_at", "updated_at") VALUES (?, ?, ?, ?) RETURNING "id"[0m  [["todo_name", "Test 1"], ["completed", nil], ["created_at", "2025-05-22 22:25:09.825739"], ["updated_at", "2025-05-22 22:25:09.825739"]]
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.2ms)[0m  [1m[31mDELETE FROM "todos";
+INSERT INTO "todos" ("id", "todo_name", "completed", "created_at", "updated_at") VALUES (980190962, 'MyString', 0, '2025-05-24 02:31:11.728811', '2025-05-24 02:31:11.728811'), (298486374, 'MyString', 0, '2025-05-24 02:31:11.728811', '2025-05-24 02:31:11.728811')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.5ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+TodoTest: test_should_get_maiin_page
+------------------------------------
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-23 22:31:15 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC[0m
+Completed 200 OK in 38ms (Views: 7.5ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 2.4ms)
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-05-23 22:31:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN immediate TRANSACTION[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mFixtures Load (0.1ms)[0m  [1m[31mDELETE FROM "todos";
+INSERT INTO "todos" ("id", "todo_name", "completed", "created_at", "updated_at") VALUES (980190962, 'MyString', 0, '2025-05-24 02:32:42.295614', '2025-05-24 02:32:42.295614'), (298486374, 'MyString', 0, '2025-05-24 02:32:42.295614', '2025-05-24 02:32:42.295614')[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mTRANSACTION (5.0ms)[0m  [1m[36mCOMMIT TRANSACTION[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_key_check[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+------------------------------------
+TodoTest: test_should_get_maiin_page
+------------------------------------
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-23 22:32:43 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC[0m
+Completed 200 OK in 16ms (Views: 6.8ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-05-23 22:32:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

@@ -5,7 +5,8 @@ class TodoTest < ApplicationSystemTestCase
     
   end
 
-  test "should get maiin page" do
-    
+  test "should get main page" do
+    visit api_todos_url
+    assert_text "Todo List App"
   end
 end

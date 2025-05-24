@@ -2371,3 +2371,26 @@ Processing by Api::TodosController#update_completed as HTML
 Completed 200 OK in 11ms (Views: 0.6ms | ActiveRecord: 2.7ms (2 queries, 0 cached) | GC: 2.5ms)
 
 
+Started GET "/ws" for 127.0.0.1 at 2025-05-23 22:34:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Backend'*/[0m
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/ws" for ::1 at 2025-05-23 22:34:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/ws"):
+  
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-23 22:34:53 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 29ms (Views: 8.5ms | ActiveRecord: 2.6ms (1 query, 0 cached) | GC: 9.4ms)
+
+
+Started GET "/api/todos" for 127.0.0.1 at 2025-05-23 22:34:53 -0400
+Processing by Api::TodosController#index as HTML
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" ORDER BY "todos"."created_at" DESC /*action='index',application='Backend',controller='todos'*/[0m
+  ↳ app/controllers/api/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+
+
